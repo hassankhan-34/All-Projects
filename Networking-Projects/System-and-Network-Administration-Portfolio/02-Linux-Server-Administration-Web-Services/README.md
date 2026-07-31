@@ -97,95 +97,12 @@ The overall project environment was designed as follows:
 
 ---
 
-# 📂 Project Structure
-
-```text
-02-Linux-Server-Administration-Web-Services
-│
-├── 01-Project-Documentation
-│   ├── Project-Overview.docx
-│   ├── Project-Objectives.docx
-│   ├── System-Requirements.docx
-│   ├── Network-Configuration.docx
-│   └── Configuration-Notes.txt
-│
-├── 02-Linux-Server-Setup
-│   ├── 01-CentOS-Installation.pdf
-│   ├── 02-Hostname-Configuration.pdf
-│   ├── 03-Static-IP-Configuration.pdf
-│   └── 04-Repository-Configuration.pdf
-│
-├── 03-User-Group-Administration
-│   ├── 01-User-Creation.pdf
-│   ├── 02-Group-Management.pdf
-│   ├── 03-Password-Management.pdf
-│   └── 04-Sudo-Privileges.pdf
-│
-├── 04-File-System-Permissions
-│   ├── 01-Directory-Management.pdf
-│   ├── 02-File-Permissions.pdf
-│   ├── 03-Ownership-Management.pdf
-│   └── 04-ACL-Configuration.pdf
-│
-├── 05-SSH-Remote-Administration
-│   ├── 01-SSH-Installation.pdf
-│   ├── 02-SSH-Configuration.pdf
-│   ├── 03-Remote-Login-Test.pdf
-│   └── 04-SSH-Troubleshooting.pdf
-│
-├── 06-Firewall-SELinux
-│   ├── 01-Firewalld-Configuration.pdf
-│   ├── 02-Port-Management.pdf
-│   ├── 03-SELinux-Configuration.pdf
-│   └── 04-Security-Testing.pdf
-│
-├── 07-Apache-Web-Server
-│   ├── 01-Apache-Installation.pdf
-│   ├── 02-Web-Server-Configuration.pdf
-│   ├── 03-Website-Deployment.pdf
-│   └── 04-Web-Server-Testing.pdf
-│
-├── 08-Virtual-Hosting
-│   ├── 01-Virtual-Host-Configuration.pdf
-│   ├── 02-Website-1-Configuration.pdf
-│   ├── 03-Website-2-Configuration.pdf
-│   └── 04-Virtual-Host-Testing.pdf
-│
-├── 09-System-Administration
-│   ├── 01-Process-Management.pdf
-│   ├── 02-Systemd-Service-Management.pdf
-│   ├── 03-Disk-Management.pdf
-│   └── 04-Log-Management.pdf
-│
-├── 10-Testing-Troubleshooting
-│   ├── 01-Connectivity-Testing
-│   ├── 02-Web-Service-Testing
-│   ├── 03-Service-Failure-Test
-│   └── 04-Troubleshooting-Evidence
-│       └── Troubleshooting-Report.md
-│
-├── 11-Screenshots
-│   ├── Server-Configuration
-│   ├── User-Management
-│   ├── Permissions
-│   ├── SSH
-│   ├── Firewall
-│   ├── SELinux
-│   ├── Apache
-│   ├── Virtual-Hosts
-│   └── Testing
-│
-├── 12-Final-Report
-│   └── Linux-Server-Administration-Web-Services-Final-Report.pdf
-│
-└── README.md
-```
 
 ---
 
 # 🔧 Project Modules
 
-## 01 — Project Documentation
+## 01 Project Documentation
 
 This section contains the planning and documentation files for the project.
 
@@ -199,7 +116,7 @@ It includes:
 
 ---
 
-## 02 — Linux Server Setup
+## 02 Linux Server Setup
 
 The CentOS 7 Linux server was installed and configured.
 
@@ -224,7 +141,7 @@ linuxsrv
 
 ---
 
-## 03 — User & Group Administration
+## 03 User & Group Administration
 
 Linux account management was implemented.
 
@@ -240,7 +157,7 @@ This section demonstrates basic Linux identity and access management.
 
 ---
 
-## 04 — File System Permissions
+## 04 File System Permissions
 
 Linux filesystem security was configured.
 
@@ -256,7 +173,7 @@ Commands such as `chmod`, `chown`, `chgrp`, `setfacl`, and `getfacl` were used.
 
 ---
 
-## 05 — SSH Remote Administration
+## 05 SSH Remote Administration
 
 SSH was configured to enable secure remote administration of the Linux server.
 
@@ -275,7 +192,7 @@ Remote access was tested using the server IP:
 
 ---
 
-## 06 — Firewall & SELinux
+## 06 Firewall & SELinux
 
 Linux security mechanisms were configured and tested.
 
@@ -290,7 +207,7 @@ HTTP port 80 was configured for Apache web services.
 
 ---
 
-## 07 — Apache Web Server
+## 07 Apache Web Server
 
 The Apache HTTP Server was installed and configured.
 
@@ -315,7 +232,7 @@ Syntax OK
 
 ---
 
-## 08 — Virtual Hosting
+## 08 Virtual Hosting
 
 Apache Virtual Hosting was implemented to host multiple websites on a single Linux server.
 
@@ -332,7 +249,7 @@ Both websites were tested successfully.
 
 ---
 
-## 09 — System Administration
+## 09 System Administration
 
 This module focused on ongoing Linux server administration.
 
@@ -347,7 +264,7 @@ Linux commands were used to monitor system processes, services, disk usage, and 
 
 ---
 
-## 10 — Testing & Troubleshooting
+## 10 Testing & Troubleshooting
 
 The server and services were tested to verify proper operation.
 
@@ -412,27 +329,6 @@ The screenshots provide visual evidence of the configuration and successful oper
 
 ---
 
-# 🧪 Testing Summary
-
-The following tests were successfully completed:
-
-| Test                       | Result       |
-| -------------------------- | ------------ |
-| Server IP Configuration    | ✅ Successful |
-| Hostname Configuration     | ✅ Successful |
-| Network Connectivity       | ✅ Successful |
-| Gateway Connectivity       | ✅ Successful |
-| SSH Remote Access          | ✅ Successful |
-| Apache Service             | ✅ Successful |
-| HTTP Port 80               | ✅ Successful |
-| Site 1                     | ✅ Successful |
-| Site 2                     | ✅ Successful |
-| Virtual Hosting            | ✅ Successful |
-| Apache Configuration Test  | ✅ Syntax OK  |
-| Service Failure Simulation | ✅ Completed  |
-| Troubleshooting            | ✅ Successful |
-| Service Recovery           | ✅ Successful |
-| Final Verification         | ✅ Successful |
 
 ---
 
@@ -560,16 +456,6 @@ The project successfully produced a functional CentOS Linux server environment c
 * Recovering failed services and verifying successful operation.
 
 ---
-
-# 📄 Final Report
-
-The complete project documentation is available in:
-
-```text
-12-Final-Report/Linux-Server-Administration-Web-Services-Final-Report.pdf
-```
-
-The final report provides a complete overview of the project's objectives, implementation, configuration, testing, troubleshooting, results, and conclusion.
 
 ---
 
