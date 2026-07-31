@@ -1,6 +1,6 @@
 # Troubleshooting Solutions
 
-## Solution 1 — Network Connectivity
+## Solution 1 Network Connectivity
 
 ### Problem
 
@@ -40,7 +40,7 @@ The network configuration was verified and corrected where necessary.
 
 ---
 
-## Solution 2 — DHCP Interface Configuration
+## Solution 2 DHCP Interface Configuration
 
 ### Problem
 
@@ -76,7 +76,7 @@ The DHCP server successfully operated on the project network.
 
 ---
 
-## Solution 3 — DNS Configuration
+## Solution 3 DNS Configuration
 
 ### Problem
 
@@ -110,7 +110,7 @@ The DNS server successfully resolved internal hostnames.
 
 ---
 
-## Solution 4 — Client DNS Configuration
+## Solution 4 Client DNS Configuration
 
 ### Problem
 
