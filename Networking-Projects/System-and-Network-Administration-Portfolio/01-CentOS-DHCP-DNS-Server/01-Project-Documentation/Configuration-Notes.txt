@@ -1,0 +1,247 @@
+==================================================
+CENTOS DHCP AND DNS SERVER ADMINISTRATION LAB
+CONFIGURATION NOTES
+==================================================
+
+PROJECT NETWORK
+---------------
+VMware Network:
+VMnet1
+
+Network Type:
+Host-Only
+
+Network Address:
+192.168.10.0/24
+
+Subnet Mask:
+255.255.255.0
+
+
+SERVER CONFIGURATION
+--------------------
+Hostname:
+dns-dhcp-server.lab.local
+
+Server IP:
+192.168.10.2
+
+Server MAC Address:
+00:0c:29:c4:99:98
+
+Gateway:
+192.168.10.1
+
+DNS Server:
+192.168.10.2
+
+DNS Domain:
+lab.local
+
+
+CLIENT 1
+--------
+Hostname:
+client1.lab.local
+
+MAC Address:
+00:0c:29:97:b6:5b
+
+IP Assignment:
+DHCP
+
+DNS Server:
+192.168.10.2
+
+DNS Domain:
+lab.local
+
+
+CLIENT 2
+--------
+Hostname:
+client2.lab.local
+
+MAC Address:
+00:0c:29:1e:f9:43
+
+IP Assignment:
+DHCP
+
+DNS Server:
+192.168.10.2
+
+DNS Domain:
+lab.local
+
+
+DHCP CONFIGURATION
+------------------
+DHCP Service:
+dhcpd
+
+Configuration File:
+/etc/dhcp/dhcpd.conf
+
+DHCP Network:
+192.168.10.0/24
+
+DHCP Pool:
+192.168.10.100 - 192.168.10.200
+
+Subnet Mask:
+255.255.255.0
+
+Default Gateway:
+192.168.10.1
+
+DNS Server:
+192.168.10.2
+
+DNS Domain:
+lab.local
+
+DHCP Port:
+UDP 67
+
+
+DNS CONFIGURATION
+-----------------
+DNS Service:
+BIND / named
+
+DNS Configuration Directory:
+/etc/named.conf
+
+Forward Zone:
+lab.local
+
+Reverse Zone:
+10.168.192.in-addr.arpa
+
+DNS Server IP:
+192.168.10.2
+
+DNS Port:
+TCP/UDP 53
+
+
+DNS RECORDS
+-----------
+Server:
+dns-dhcp-server.lab.local
+192.168.10.2
+
+Client 1:
+client1.lab.local
+DHCP Assigned IP
+
+Client 2:
+client2.lab.local
+DHCP Assigned IP
+
+
+IMPORTANT COMMANDS
+------------------
+Check network interfaces:
+nmcli device status
+
+Check IP address:
+ip addr
+
+Check routing table:
+ip route
+
+Check DHCP service:
+systemctl status dhcpd
+
+Restart DHCP:
+systemctl restart dhcpd
+
+Check DHCP logs:
+journalctl -u dhcpd --no-pager -n 50
+
+Check DHCP leases:
+cat /var/lib/dhcpd/dhcpd.leases
+
+Check DNS service:
+systemctl status named
+
+Restart DNS:
+systemctl restart named
+
+Check DNS configuration:
+named-checkconf
+
+Check forward DNS zone:
+named-checkzone lab.local /var/named/forward.lab.local
+
+Check reverse DNS zone:
+named-checkzone 10.168.192.in-addr.arpa /var/named/reverse.lab.local
+
+Check DNS port:
+ss -tulpn | grep :53
+
+Check DHCP port:
+ss -ulpn | grep :67
+
+Test forward DNS:
+nslookup client1.lab.local
+
+Test reverse DNS:
+nslookup 192.168.10.2
+
+Test connectivity:
+ping -c 4 192.168.10.2
+
+
+TROUBLESHOOTING NOTES
+---------------------
+1. If clients do not receive an IP address, check the DHCP service.
+2. Check the DHCP logs using journalctl.
+3. Verify that the client and server are connected to the same VMware VMnet1 network.
+4. Verify that the server interface is configured with 192.168.10.2.
+5. Check the DHCP configuration file for syntax errors.
+6. Verify that the DHCP service is listening on UDP port 67.
+7. If DNS resolution fails, check the named service.
+8. Verify that clients use 192.168.10.2 as their DNS server.
+9. Check the DNS zone files.
+10. Validate DNS configuration using named-checkconf and named-checkzone.
+11. Check that TCP and UDP port 53 are allowed through the firewall.
+12. The virbr0 interface is part of the default libvirt networking environment and is separate from the project's VMnet1 network.
+
+
+FINAL VERIFICATION
+------------------
+DHCP Service:
+Working
+
+DNS Service:
+Working
+
+DHCP Client IP Assignment:
+Working
+
+Forward DNS:
+Working
+
+Reverse DNS:
+Working
+
+Client-to-Server Connectivity:
+Working
+
+Client-to-Client Connectivity:
+Working
+
+DHCP-DNS Integration:
+Working
+
+
+PROJECT STATUS
+--------------
+Completed
+
+==================================================
+END OF CONFIGURATION NOTES
+==================================================
